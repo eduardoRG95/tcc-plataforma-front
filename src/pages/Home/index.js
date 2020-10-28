@@ -9,7 +9,6 @@ export default function Login() {
     return (
         <div>
             <Header />   
-            <InputsLogin />      
         </div>
     );
 }

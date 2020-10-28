@@ -1,15 +1,18 @@
 import React from 'react';
 
-import { FormControl, Button, Form  } from 'react-bootstrap';
+import { FormControl, Button, Form, Row, Col } from 'react-bootstrap';
+
+import { FiSearch } from 'react-icons/fi';
 
 import './styles.css';
 
 export default function Search() {
     return (
-        <div className="search-content">
-             <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-success">Search</Button>
+        <div className="search-content col-md-4" >
+            <Form>
+                <FormControl type="text" placeholder="Pesquisar produtos" />    
+                <Button className="button-search"><FiSearch /></Button>
+     
             </Form>
         </div>
     );

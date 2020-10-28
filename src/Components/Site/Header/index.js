@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Col, Container } from 'react-bootstrap';
 
 import Menu from '../Menu';
 import Search from '../Search';
@@ -11,7 +11,9 @@ export default function Header() {
         <div className="header">
                  <div className="justify-content-md-center header-search-cart">
                     <Col md={24}>
-                        <Search />
+                        <Container>
+                            <Search />
+                        </Container>                        
                     </Col>
                 </div>
                 <div className="justify-content-md-center menu-header">

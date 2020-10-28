@@ -1,0 +1,24 @@
+.search-content {
+    background: #fff;
+    border-radius: 8px;
+}
+.search-content form * {
+    display: inline-block;
+}
+
+.search-content form input {
+    width: 89%;
+    border: none;
+}
+.search-content form button {
+    width: 10%;
+    vertical-align: top;
+}
+
+.search-content  .button-search {
+    background: transparent;
+    color: #00114d;
+    border: none;
+    font-size: 22px;
+    line-height: 17px;
+}
