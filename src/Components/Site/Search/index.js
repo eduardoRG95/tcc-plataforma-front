@@ -8,7 +8,7 @@ import './styles.css';
 
 export default function Search() {
     return (
-        <div className="search-content col-md-4" >
+        <div className="search-content col-md-8" >
             <Form>
                 <FormControl type="text" placeholder="Pesquisar produtos" />    
                 <Button className="button-search"><FiSearch /></Button>

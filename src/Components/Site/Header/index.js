@@ -18,7 +18,7 @@ export default function Header() {
                         <div className="logo-search-header col-md-9">
                             <Search />
                         </div>
-                        <div className="logo-search-header col-md-3">
+                        <div className="logo-search-header col-sm-12 col-md-3">
                             <Cart />
                             <User />
                         </div>

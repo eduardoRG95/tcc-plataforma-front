@@ -8,7 +8,7 @@ import './styles.css';
 
 export default function Cart() {
     return (
-        <div className="cart-content col-md-6">
+        <div className="cart-content col-6">
                 <FiShoppingCart />
         </div>
     );

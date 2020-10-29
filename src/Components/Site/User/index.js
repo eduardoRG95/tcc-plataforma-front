@@ -8,7 +8,7 @@ import './styles.css';
 
 export default function User() {
     return (
-        <div className="user-content col-md-6" >
+        <div className="user-content col-6" >
                <span> <FiUser /> </span>
         </div>
     );
