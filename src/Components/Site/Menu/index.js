@@ -13,9 +13,13 @@ export default function Menu() {
                    Menu
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                    <Dropdown.Item href="/produtos">Produtos</Dropdown.Item>
-                    <Dropdown.Item href="/vendedores">Vendedores</Dropdown.Item>
-                    <Dropdown.Item href="/clientes">Clientes</Dropdown.Item>
+                    <Dropdown.Item href="/produtos">Categoria 1</Dropdown.Item>
+                    <Dropdown.Item href="/Produtos">Categoria 2</Dropdown.Item>
+                    <Dropdown.Item href="/Produtos">Categoria 3</Dropdown.Item>
+                    <Dropdown.Item href="/produtos">Categoria 4</Dropdown.Item>
+                    <Dropdown.Item href="/Produtos">Categoria 5</Dropdown.Item>
+                    <Dropdown.Item href="/Produtos">Categoria 6</Dropdown.Item>
+                    <Dropdown.Item href="/Produtos">Categoria 7</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
             <div className="menu">
