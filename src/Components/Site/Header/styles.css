@@ -7,7 +7,9 @@
     margin-bottom: 20px;
     background-color:#605b4f;
 }
-
+.logo-search-header  {
+    margin-top: 25px;
+}
 .header .header-search-cart{
     height: 85px;
 }

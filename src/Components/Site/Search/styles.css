@@ -1,6 +1,7 @@
 .search-content {
     background: #fff;
     border-radius: 8px;
+    display: inline-block;
 }
 .search-content form * {
     display: inline-block;
