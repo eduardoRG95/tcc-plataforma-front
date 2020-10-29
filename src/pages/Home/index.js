@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { Container } from 'react-bootstrap';
+
+import Lists from '../../services/serviceList';
 
 import Header from '../../Components/Site/Header';
-import InputsLogin from '../../Components/Login/FormLogin';
+import List from '../../Components/Produtos/List';
 
 import './styles.css';
+export default function Home() {
 
-export default function Login() {
+    const [listProdutos, setListProdutos] = useState([]);
+
+    async function GetListProdutos() {
+        const response = await Lists('produto');
+        setListProdutos(response.data)
+    }
+
+    useEffect(() => {
+        GetListProdutos();
+    }, []);
+
     return (
         <div>
-            <Header />   
+            <Header />
+            <Container>
+                <div className="content-home">
+                    {listProdutos.length > 0 && (
+                        <List listProdutos={listProdutos} />
+                    )}
+                </div>
+            </Container>
         </div>
     );
 }

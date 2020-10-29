@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import './styles.css';
 import { Row, Col, ListGroup, Button, Modal, Form } from 'react-bootstrap';
 import { FiXCircle, FiEdit } from 'react-icons/fi';
@@ -42,124 +42,25 @@ export default function List(props) {
         handleAlterShow();
     }
 
-    async function handleDeleteRegister() {
-        try {
-            const response = await Delete('/Produto/', id);
-            if (response) {
-                alert('Dados excluídos com sucesso');
-                handleDeleteClose();
-            }else {
-                alert('Erro ao deletar dados');
-                handleDeleteClose();
-            }
-
-        } catch (err) {
-            alert('Erro ao deletar dados');
-            handleDeleteClose();
-        }
-    }
-    async function handleAlterRegister(e) {
-        e.preventDefault();
-        try {
-            const data = {
-                id,
-                nome,
-                valor,
-                quantidade
-            }
-            
-            const response = await Edition('/produto', data);
-            if (response) {
-                alert('Dados Alterados com sucesso');
-                handleAlterClose();
-            }else {
-                alert('Erro ao alterar dados');
-                handleAlterClose();
-            }
-        } catch (err) {
-            alert('Erro ao alterar dados');
-            handleAlterClose();
-        }
-
-    }
-
 
     const itens = listagem.map((item) =>
-        <ListGroup.Item key={item.id} className="item-list-produtos">
+        <li key={item.id} className="item-list-produtos">
+            <div className="img-list"></div>
             <span className="item-name"> {item.nome}  </span>
             <span className="item-valor"> R$ {item.valor} </span>
-            <span className="item-edit"><FiEdit onClick={() => EditarProduto(item)} /></span>
-            <span className="item-delete"><FiXCircle onClick={() => DeletarProduto(item.id)} /></span>
-        </ListGroup.Item>
+            <Button className="item-button-sale" variant="success"> Comprar </Button>
+        </li>
     );
     return (
         <div>
             <Row className="justify-content-md-center">
                 <Col md={10}>
-                    <ListGroup variant="flush" className="list-usuarios">
+                    <ul className="list-produtos">
                         {itens}
-                    </ListGroup>
+                    </ul>
                 </Col>
             </Row>
 
-            <Modal 
-                size="lg" show={showDelete} onHide={handleDeleteClose} aria-labelledby="contained-modal-title-vcenter" centered >
-                <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-vcenter">
-                        Deletar produto  <strong className="id-produto">{id}</strong>
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>
-                        Você tem certeza que gostaria de excluir esse produto?
-                    </p>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button className="btn-danger" onClick={handleDeleteClose}>Cancelar</Button>
-                    <Button onClick={handleDeleteRegister}>Confirmar</Button>
-                </Modal.Footer>
-            </Modal>
-
-            {nome &&
-                <Modal
-                    show={showAlter} onHide={handleAlterClose}
-                    size="lg"
-                    aria-labelledby="contained-modal-title-vcenter">
-                    <Modal.Header closeButton >
-                        <Modal.Title id="contained-modal-title-vcenter">
-                            Editar Produto <strong>{id}</strong>
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <Form onSubmit={handleAlterRegister}>
-                            <Form.Group controlId="formGroupNome">
-                                <Form.Label>Nome</Form.Label>
-                                <Form.Control
-                                    type="Nome"
-                                    value={nome}
-                                    onChange={e => setNome(e.target.value)}
-                                    placeholder="Nome" />
-                            </Form.Group>
-                            <Form.Group controlId="formGroupValor">
-                                <Form.Label>Valor</Form.Label>
-                                <Form.Control
-                                    type="Valor"
-                                    value={valor}
-                                    onChange={e => setValor(e.target.value)}
-                                    placeholder="Valor" />
-                            </Form.Group>
-                            <Form.Group controlId="formGroupQuantidade">
-                                <Form.Label>Quantidade</Form.Label>
-                                <Form.Control
-                                    type="Quantidade"
-                                    value={quantidade}
-                                    onChange={e => setQuantidade(e.target.value)}
-                                    placeholder="Quantidade" />
-                            </Form.Group>
-                            <Button type="submit" >Salvar</Button>
-                        </Form>
-                    </Modal.Body>
-                </Modal>}
 
         </div>
     );
