@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 
 import Lists from '../../services/serviceList';
 
+import Footer from '../../Components/Site/Footer';
 import Header from '../../Components/Site/Header';
 import List from '../../Components/Produtos/List';
 
@@ -29,8 +30,15 @@ export default function Home() {
                     {listProdutos.length > 0 && (
                         <List listProdutos={listProdutos} />
                     )}
+                    {listProdutos.length > 0 && (
+                        <List listProdutos={listProdutos} />
+                    )}
+                    {listProdutos.length > 0 && (
+                        <List listProdutos={listProdutos} />
+                    )}
                 </div>
             </Container>
+            <Footer />
         </div>
     );
 }
