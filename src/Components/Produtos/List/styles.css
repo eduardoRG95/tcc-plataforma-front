@@ -15,6 +15,9 @@
     background: #fefefe;
     margin: 0 auto 25px;
 }
+.img-products {
+    width: 100%;
+}
 .item-name{
     width: 100%;
     display: block;

@@ -1,11 +1,8 @@
 import React, { useLayoutEffect, useState } from 'react';
 import './styles.css';
-import { Row, Col, ListGroup, Button, Modal, Form } from 'react-bootstrap';
-import { FiXCircle, FiEdit } from 'react-icons/fi';
+import { Row, Col, Button,  } from 'react-bootstrap';
 
-//Services
-import Edition from '../../../services/serviceEdition';
-import Delete from '../../../services/serviceDelete';
+import semFoto from '../../../assets/sem-foto.jpg'; // with import
 
 export default function List(props) {
 
@@ -45,7 +42,7 @@ export default function List(props) {
 
     const itens = listagem.map((item) =>
         <li key={item.id} className="item-list-produtos">
-            <div className="img-list"></div>
+            <div className="img-list"><img src={semFoto} className="img-products" /></div>
             <span className="item-name"> {item.nome}  </span>
             <span className="item-valor"> R$ {item.valor} </span>
             <Button className="item-button-sale" variant="success"> Comprar </Button>
