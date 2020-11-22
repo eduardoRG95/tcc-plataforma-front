@@ -1,17 +1,29 @@
-import React from 'react';
-
-import { FormControl, Button, Form, Row, Col } from 'react-bootstrap';
+import React, { useState } from 'react';
 
 import { FiSearch } from 'react-icons/fi';
+
+import { FormControl, Button, Form } from 'react-bootstrap';
+
+import { useHistory } from "react-router-dom";
+
+import { Container } from 'react-bootstrap';
 
 import './styles.css';
 
 export default function Search() {
+
+    const [produto, setProduto] = useState();
+    const history = useHistory();
+
+    function RedirectToSearch(){
+        history.push('/produto/'+produto);
+    }
+
     return (
         <div className="search-content col-md-8" >
             <Form>
-                <FormControl type="text" placeholder="Pesquisar produtos" />    
-                <Button className="button-search"><FiSearch /></Button>
+                <FormControl type="text" onChange={e => setProduto(e.target.value)}  placeholder="Pesquisar produtos" />    
+                <Button onClick={RedirectToSearch} className="button-search"><FiSearch /></Button>
      
             </Form>
         </div>

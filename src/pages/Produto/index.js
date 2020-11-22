@@ -11,9 +11,6 @@ import './styles.css';
 
 export default function Produtos() {
 
-    useEffect(() => {   
-    }, []);
-
     return (
         <div className="produtos-container">
             <Header />
