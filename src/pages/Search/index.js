@@ -9,6 +9,8 @@ import { Container  } from 'react-bootstrap';
 import Footer from '../../Components/Site/Footer';
 import Header from '../../Components/Site/Header';
 
+import './styles.css';
+
 export default function Search(props) {
 
     const [listProdutos, setListProdutos] = useState([]);
@@ -25,15 +27,20 @@ export default function Search(props) {
 return (
     <div>
          <Header />
-            <Container>
-                 {listProdutos.length > 0 && (
+         <div className="content-home">
+            <Container className="content-search">
+                    {listProdutos.length > 0 && (
                         <List listProdutos={listProdutos} />
+                    )}
+                    {listProdutos.length == 0 && (
+                        <div className="content-ops">
+                            <h3   className="title-ops">OPS...</h3>
+                            <span className="legend-ops">A busca não encontrou resultados!</span>
+                        </div>
                     )}
             </Container>
             <Footer />
-     
-
-
+         </div>   
     </div>
 );
 }

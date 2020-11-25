@@ -1,0 +1,23 @@
+.content-search{
+    height: 460px;
+
+}
+.content-ops {
+    height: 460px;
+    width: 760px;
+    margin: 0 auto;
+}
+
+.title-ops{
+    float: left;
+    font-size: 135px;
+    font-style: italic;
+    margin-top: 80px;   
+}
+
+.legend-ops {
+    font-size: 23px;
+    color: #00114d;
+    margin-top: 125px;
+    float: right;
+}

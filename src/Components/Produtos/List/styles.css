@@ -3,11 +3,12 @@
     margin: 5px;
     text-align: center;
     list-style: none;
-    flex: 1;
+    float: left;
+    width: 23%;
 }
 .list-produtos {
-    margin: 30px auto 20px;
-    display: flex;
+    margin: 30px auto 20px; 
+    width: 100%;
 }
 .img-list{
     height: 200px;

@@ -11,6 +11,7 @@ export default function Routes() {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/produto" component={Produto} />
+                <Route exact path="/carrinho" component={Produto} />
                 <Route exact path="/produto/:name" component={Search} />
             </Switch>
         </BrowserRouter>
