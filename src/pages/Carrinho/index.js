@@ -2,18 +2,17 @@ import React, { useEffect, useState } from 'react';
 
 import Header from '../../Components/Site/Header';
 
-
-import { Container } from 'react-bootstrap';
+import { Container, Row,Col } from 'react-bootstrap';
 
 import './styles.css';
 
-export default function Produtos() {
+export default function Cart() {
 
     return (
-        <div className="produtos-container">
+        <div className="cart-container">
             <Header />
             <Container>
-                <h1>Produto</h1>
+                <h1>Carrinho</h1>
             </Container>
         </div>
     );

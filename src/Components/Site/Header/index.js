@@ -19,7 +19,9 @@ export default function Header() {
                             <Search />
                         </div>
                         <div className="logo-search-header col-sm-12 col-md-3">
-                            <Cart />
+                            <a href="/carrinho" className="link-cart">
+                                <Cart />
+                            </a>
                             <User />
                         </div>
                         </Row>
