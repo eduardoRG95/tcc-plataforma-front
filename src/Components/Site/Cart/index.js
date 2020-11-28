@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { FormControl, Button, Form, Row, Col } from 'react-bootstrap';
-
 import { FiShoppingCart } from 'react-icons/fi';
 
 import './styles.css';

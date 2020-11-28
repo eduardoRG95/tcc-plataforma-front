@@ -8,13 +8,7 @@ import semFoto from '../../../assets/sem-foto.jpg'; // with import
 
 export default function List(props) {
 
-    const [listCart, setListCart] = useState([]);
-
-    // Propriedades produto
-    const [id, setId] = useState();
-    const [nome, setNome] = useState();
-    const [valor, setValor] = useState();
-    const [quantidade, setQuantidade] = useState();
+    const [listCart] = useState([]);
 
     const history = useHistory();
     
@@ -31,16 +25,12 @@ export default function List(props) {
     function saveCookie(){
         var cookieString = JSON.stringify(listCart);
         document.cookie = cookieString;
-        redirect();
+       // redirect();
     }
 
     function redirect (){
         history.push('/carrinho');
     }
-    
-    // function getCookie(){
-    //     alert(document.cookie);
-    // }
 
 
     const itens = listagem.map((item) =>

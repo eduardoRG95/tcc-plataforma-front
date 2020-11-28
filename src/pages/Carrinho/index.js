@@ -8,6 +8,16 @@ import './styles.css';
 
 export default function Cart() {
 
+    useEffect(() => {
+        getProductsCart();
+    }, []);
+
+    function getProductsCart(){
+        var arr = JSON.parse((document.cookie));
+        console.log(arr)
+    }
+
+
     return (
         <div>
             <Header />
