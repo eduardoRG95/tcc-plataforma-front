@@ -9,11 +9,14 @@ import './styles.css';
 export default function Cart() {
 
     return (
-        <div className="cart-container">
+        <div>
             <Header />
-            <Container>
-                <h1>Carrinho</h1>
-            </Container>
-        </div>
+            <div className="cart-container">
+                <Container>
+                    <h1>Carrinho</h1>
+                </Container>
+            </div>
+
+        </div>    
     );
 }

@@ -2,42 +2,42 @@ import React, { useState } from 'react';
 import './styles.css';
 import { Row, Col, Button,  } from 'react-bootstrap';
 
+import { browserHistory } from 'react-router';
+
 import semFoto from '../../../assets/sem-foto.jpg'; // with import
 
 export default function List(props) {
+
+    const [listCart, setListCart] = useState([]);
 
     // Propriedades produto
     const [id, setId] = useState();
     const [nome, setNome] = useState();
     const [valor, setValor] = useState();
     const [quantidade, setQuantidade] = useState();
-
-    // Modal de Excluir
-    const [showDelete, setShowDelete] = useState(false);
-    const handleDeleteClose = () => setShowDelete(false);
-    const handleDeleteShow = () => setShowDelete(true);   
-    
-    // Modal Alteração
-    const [showAlter, setShowAlter] = useState(false);
-    const handleAlterClose = () => setShowAlter(false);
-    const handleAlterShow = () => setShowAlter(true);
-    
     
     // Listagem
     const [listagem] = useState(props.listProdutos);
-    
-    function DeletarProduto(id) {
-        setId(id);
-        handleDeleteShow();
+
+    function saveCart(id) {
+        listCart.push(id)
+        saveCookie();
+    }
+    function saveCookie() {
+        document.cookie( JSON.stringify(listCart))
+    }
+    function saveCookie(){
+        var cookieString = JSON.stringify(listCart);
+        document.cookie = cookieString;
     }
 
-    function EditarProduto(item) {
-        setId(item.id);
-        setNome(item.nome);
-        setValor(item.valor);
-        setQuantidade(item.quantidade);
-        handleAlterShow();
+    function redirect (){
+        this.context.router.push("/path")
     }
+    
+    // function getCookie(){
+    //     alert(document.cookie);
+    // }
 
 
     const itens = listagem.map((item) =>
@@ -45,7 +45,7 @@ export default function List(props) {
             <div className="img-list"><img src={semFoto} className="img-products" /></div>
             <span className="item-name"> {item.nome}  </span>
             <span className="item-valor"> R$ {item.valor} </span>
-            <Button className="item-button-sale" variant="success"> Comprar </Button>
+            <Button className="item-button-sale" onClick={e => saveCart(item.id)} variant="success"> Comprar </Button>
         </li>
     );
     return (

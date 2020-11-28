@@ -30,12 +30,6 @@ export default function Home() {
                     {listProdutos.length > 0 && (
                         <List listProdutos={listProdutos} />
                     )}
-                    {listProdutos.length > 0 && (
-                        <List listProdutos={listProdutos} />
-                    )}
-                    {listProdutos.length > 0 && (
-                        <List listProdutos={listProdutos} />
-                    )}
                 </div>
             </Container>
             <Footer />
