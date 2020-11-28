@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './styles.css';
 import { Row, Col, Button,  } from 'react-bootstrap';
 
-import { browserHistory } from 'react-router';
+import { useHistory }  from "react-router-dom";
 
 import semFoto from '../../../assets/sem-foto.jpg'; // with import
 
@@ -15,6 +15,8 @@ export default function List(props) {
     const [nome, setNome] = useState();
     const [valor, setValor] = useState();
     const [quantidade, setQuantidade] = useState();
+
+    const history = useHistory();
     
     // Listagem
     const [listagem] = useState(props.listProdutos);
@@ -29,10 +31,11 @@ export default function List(props) {
     function saveCookie(){
         var cookieString = JSON.stringify(listCart);
         document.cookie = cookieString;
+        redirect();
     }
 
     function redirect (){
-        this.context.router.push("/path")
+        history.push('/carrinho');
     }
     
     // function getCookie(){

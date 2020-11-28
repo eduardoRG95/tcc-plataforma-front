@@ -6,8 +6,6 @@ import { FormControl, Button, Form } from 'react-bootstrap';
 
 import { useHistory } from "react-router-dom";
 
-import { Container } from 'react-bootstrap';
-
 import './styles.css';
 
 export default function Search() {
