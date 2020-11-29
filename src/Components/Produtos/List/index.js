@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './styles.css';
-import { Row, Col, Button,  } from 'react-bootstrap';
+import { Row, Col, Button  } from 'react-bootstrap';
 
 import semFoto from '../../../assets/sem-foto.jpg'; // with import
 
@@ -14,17 +14,9 @@ export default function List(props) {
 
     function saveCart(id) {
         listCart.push(id)
-        saveCookie();
+        localStorage.setItem('id', id)
     }
-    function saveCookie() {
-        document.cookie( JSON.stringify(listCart))
-    }
-    function saveCookie(){
-        var cookieString = JSON.stringify(listCart);
-        document.cookie = cookieString;
-    }
-
-
+    
 
     const itens = listagem.map((item) =>
         <li key={item.id} className="item-list-produtos">

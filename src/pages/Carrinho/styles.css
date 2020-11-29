@@ -33,3 +33,26 @@
     float: left;
     margin: 35px auto 0;
 }
+.actions-buttons-cart{
+    text-align: right;
+    clear: both;
+}
+.finalizar-pedido{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 25px;
+}
+.calculate-freigh{
+    width: 35%;
+    float: right;
+    height: 200px;
+}
+
+.input-frete{
+    float: left;
+    width: 50%;
+}
+.button-search{
+    width: 40%;
+    float: right;
+}
