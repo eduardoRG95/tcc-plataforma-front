@@ -1,9 +1,6 @@
 import api from './api';
 
-export default function List(url) {
-    const response = api.get(url, {
-    }).then(response => {
-        return response;
-    });
+export default async function ListCart(url, data) {
+    const response = await api.get(url, data)
     return response;
 }
